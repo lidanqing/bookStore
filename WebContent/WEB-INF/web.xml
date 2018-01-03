@@ -31,4 +31,14 @@
 		<url-pattern>/imageCode</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+    	<servlet-name>ActiveServlet</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.ActiveServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>ActiveServlet</servlet-name>
+    	<url-pattern>/activeServlet</url-pattern>
+  	</servlet-mapping>
+	
 </web-app>

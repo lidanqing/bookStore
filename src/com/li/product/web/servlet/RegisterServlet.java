@@ -2,6 +2,7 @@ package com.li.product.web.servlet;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,11 +34,17 @@ public class RegisterServlet extends HttpServlet {
 		User user = new User();
 		try {
 			BeanUtils.populate(user, req.getParameterMap());
+			//UUID含义是通用唯一识别码 (Universally Unique Identifier)，这 是一个软件建构的标准，
+			//也是被开源软件基金会 (Open Software Foundation, OSF) 的组织在分布式计算环境 (Distributed Computing Environment, DCE) 领域的一部份。
+			//UUID 的目的，是让分布式系统中的所有元素，都能有唯一的辨识资讯，而不需要透过中央控制端来做辨识资讯的指定。如此一来，每个人都可以建立不与其它人冲突的 UUID。
+			user.setActiveCode(UUID.randomUUID().toString());//手动设置激活码
 			//调用业务逻辑
 			UserService us = new UserService();
 			us.register(user);
 			//分发转向
-			req.getSession().setAttribute("user", user);//把用户信息封装到session对象中
+			//要求用户激活后才能登录，所以不能把用户信息保存在session中
+			
+			//req.getSession().setAttribute("user", user);//把用户信息封装到session对象中
 			//registersuccess.jsp中5s后跳转到首页，直接显示欢迎xxx，所以把用户信息保存到session中
 			req.getRequestDispatcher("/registersuccess.jsp").forward(req, resp);
 		}catch(UserException e) {

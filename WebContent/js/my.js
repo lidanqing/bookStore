@@ -2,6 +2,7 @@ var interval;
 
 function startSecond() {
 
+	//1s触发一次changeSecond方法
 	interval = window.setInterval("changeSecond()", 1000);
 
 };
@@ -9,6 +10,7 @@ function startSecond() {
 function changeSecond() {
 	var second = document.getElementById("second");
 
+	//等于5
 	var svalue = second.innerHTML;
 
 	svalue = svalue - 1;
