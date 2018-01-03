@@ -40,5 +40,16 @@
     	<servlet-name>ActiveServlet</servlet-name>
     	<url-pattern>/activeServlet</url-pattern>
   	</servlet-mapping>
+  	
+  	<!-- class路径写错了会报错：HTTP Status 500 - Error instantiating servlet class XXXX -->
+  	<servlet>
+    	<servlet-name>LoginServlet</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.LoginServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>LoginServlet</servlet-name>
+    	<url-pattern>/loginServlet</url-pattern>
+  	</servlet-mapping>
 	
 </web-app>

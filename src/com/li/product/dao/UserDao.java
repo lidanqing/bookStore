@@ -21,16 +21,22 @@ public class UserDao {
 	}
 	
 	//根据激活码查找用户
-		public User findUserByActiveCode(String activeCode) throws SQLException {
-			QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
-			return qr.query("select * from user where activecode=?", new BeanHandler<User>(User.class),activeCode);
-		}
+	public User findUserByActiveCode(String activeCode) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+		return qr.query("select * from user where activecode=?", new BeanHandler<User>(User.class),activeCode);
+	}
+	
+	//修改用户激活状态
+	public void activeCode(String activeCode) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+		qr.update("update user set state=1 where activecode=?",activeCode);
 		
-		//修改用户激活状态
-		public void activeCode(String activeCode) throws SQLException {
-			QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
-			qr.update("update user set state=1 where activecode=?",activeCode);
-			
-		}
+	}
+
+	//用户登录
+	public User findUserByUserNameAndPassword(String username, String password) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+		return qr.query("select * from user where username=? and password=?", new BeanHandler<User>(User.class),username,password);
+	}
 	
 }
