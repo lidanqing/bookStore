@@ -54,4 +54,22 @@ public class UserService {
 		}
 		return user;
 	}
+	
+	public User findUserById(String id) throws UserException {
+		try {
+			return ud.findUserById(id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new UserException("用户查找失败！");
+		}
+	}
+
+	public void modifyUser(User user) throws UserException {
+		try {
+			ud.modifyUser(user);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new UserException("修改用户信息失败");
+		}
+	}
 }

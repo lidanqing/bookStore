@@ -51,5 +51,45 @@
     	<servlet-name>LoginServlet</servlet-name>
     	<url-pattern>/loginServlet</url-pattern>
   	</servlet-mapping>
+  	
+  	<servlet>
+    	<servlet-name>MyAccount</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.MyAccount</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>MyAccount</servlet-name>
+    	<url-pattern>/myAccount</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+    	<servlet-name>FindUserById</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.FindUserById</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>FindUserById</servlet-name>
+    	<url-pattern>/findUserById</url-pattern>
+  	</servlet-mapping>
 	
+	<servlet>
+    	<servlet-name>ModifyUserServlet</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.ModifyUserServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>ModifyUserServlet</servlet-name>
+    	<url-pattern>/modifyUserServlet</url-pattern>
+  	</servlet-mapping>
+ 
+  	<servlet>
+    	<servlet-name>LogOut</servlet-name>
+    	<servlet-class>com.li.product.web.servlet.LogOut</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+    	<servlet-name>LogOut</servlet-name>
+    	<url-pattern>/logout</url-pattern>
+  	</servlet-mapping>
+  	
 </web-app>

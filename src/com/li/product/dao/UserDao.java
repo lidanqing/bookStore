@@ -39,4 +39,18 @@ public class UserDao {
 		return qr.query("select * from user where username=? and password=?", new BeanHandler<User>(User.class),username,password);
 	}
 	
+	// 根据id查找用户
+	public User findUserById(String id) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+		return qr.query("select * from user where id=?", new BeanHandler<User>(
+				User.class), id);
+	}
+
+	// 修改用户信息
+	public void modifyUser(User user) throws SQLException {
+		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
+		qr.update("update user set password=? , gender=?, telephone=? where id=?",user.getPassword(),user.getGender(),user.getTelephone(),user.getId());
+		
+	}
+	
 }
