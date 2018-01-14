@@ -18,8 +18,10 @@
 
 	<a href="javascript: d.openAll();">展开所有</a> | <a href="javascript: d.closeAll();">关闭所有</a>
 	<link rel="StyleSheet" href="${pageContext.request.contextPath}/admin/css/dtree.css" type="text/css" />
+	<!-- dtree插件，网上下载 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/admin/js/dtree.js"></script>
 	<script type="text/javascript">
+	<!-- dTree add的参数分别是：当前节点、父节点、名称  -->
 		<!--
 		d = new dTree('d');
 		d.add(0,-1,'系统菜单树');

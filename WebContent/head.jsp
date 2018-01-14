@@ -10,4 +10,4 @@
 				| <a href="register.jsp">新用户注册</a></td>
 		</tr>
 	</table>
-</div>
+</div>D

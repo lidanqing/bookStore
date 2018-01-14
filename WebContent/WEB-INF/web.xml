@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
-	<filter>
+	<!-- <filter>
 		<filter-name>EncodingFilter</filter-name>
 		<filter-class>com.li.product.web.filter.EncodingFilter</filter-class>
 	</filter>
@@ -9,7 +9,7 @@
 	<filter-mapping>
 		<filter-name>EncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 	
 	<servlet>
 		<servlet-name>RegisterServlet</servlet-name>
@@ -91,5 +91,15 @@
     	<servlet-name>LogOut</servlet-name>
     	<url-pattern>/logout</url-pattern>
   	</servlet-mapping>
+  	
+  	<servlet>
+	    <servlet-name>PageServlet</servlet-name>
+	    <servlet-class>com.li.product.web.servlet.PageServlet</servlet-class>
+    </servlet>
+
+	<servlet-mapping>
+	   	<servlet-name>PageServlet</servlet-name>
+	    <url-pattern>/pageServlet</url-pattern>
+	</servlet-mapping>
   	
 </web-app>
